@@ -1,21 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/estaticos/navbar/navbar';
-import CriarProjetos from './pages/CriarProjetos';
-import Home from './pages/Home';
-import ListaProjeto from './pages/ListaProjeto';
-import Projetos from './pages/Projetos';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Footer from "./components/layout/footer/Footer";
+import Navbar from "./components/layout/navbar/Navbar";
+import AdicionarProjeto from "./pages/adicionarProjeto/AdicionarProjeto";
+
+
+import Home from "./pages/home/Home";
+import ListaProjeto from "./pages/listaProjeto/ListaProjeto";
+import Projetos from "./pages/projetos/Projetos";
+
 
 function App() {
   return (
+
     <Router>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/criarprojetos' element={<CriarProjetos />}/>
-        <Route path='/listaprojeto' element={<ListaProjeto />}/>
-        <Route path='/projetos' element={<Projetos />}/>
-      </Routes>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/adicionarprojeto" element={<AdicionarProjeto />} />
+
+          <Route path="/projetos" element={<Projetos />} />
+          
+         <Route path="/listaprojeto" element={<ListaProjeto />} />
+        </Routes>
+      <Footer/>
     </Router>
 
   );
